@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{main}">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+        <head>
+            <title>List form</title>
+            
+
+                            <title>JAS SHOP new list</title>
+
+                         
+
+                                    </head>
+
+                                    <body>
+
+                                        <!-- Navigation -->
+
+
+                                        <!-- Page Content -->
+                                        <div class="container" data-layout-fragment="content">
+
+                                            <div class="panel-group" style="margin-top:40px">
+                                                <div class="panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <h2 class="alert alert-info" role="info">New Prestataire List</h2>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <form class="form-horizontal" th:object="${prestataire}" th:action="@{/Prestataire/save}" method="post">
+                                                            <div th:class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'">
+                                                                <label class="col-sm-2 control-label">Description <span class="required">*</span></label>
+                                                                <div class="col-md-10">
+                                                                    <input type="text" class="form-control" th:field="*{description}"/>
+                                                                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" th:class="help-block">description Errors</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <button type="submit" class="btn btn-primary">Add</button>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </body>
+                                    </html>
+
